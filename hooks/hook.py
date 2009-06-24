@@ -19,11 +19,11 @@ def install(options, buildout):
     for p in location, include, lib:
         if not os.path.isdir(p):
             os.makedirs(p)
-    mapserv = os.path.join(
-        options['compile-directory'], 'mapserv')
+    #mapserv = os.path.join(
+    #    options['compile-directory'], 'mapserv')
     c = options['compile-directory']
-    dmapserv = os.path.join( location, 'mapserv')
-    shutil.copy(mapserv, dmapserv)
+    #dmapserv = os.path.join( location, 'mapserv')
+    #shutil.copy(mapserv, dmapserv)
     message =  'Successfully installed mapserv into %s'
     logging.getLogger('mapserver hook').info(
         message % location)
@@ -33,5 +33,10 @@ def install(options, buildout):
     )
         for f in os.listdir(c)
         if f.endswith('.h')]
+    #[shutil.copy(
+    #    os.path.join(c,f), lib
+    #)
+    #    for f in os.listdir(c)
+    #    if f.startswith('.libmap')] 
 
 
